@@ -12,6 +12,12 @@ public class Janela {
 
         janela.setVisible(true);
 
+        GameStart game = new GameStart();
+        game.setBounds(0, 0, 1280, 720);
+        game.setVisible(true);
+
+        janela.add(game);
+
     }
 
 }
