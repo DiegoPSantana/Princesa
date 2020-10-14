@@ -3,6 +3,8 @@ import java.awt.*;
 
 public class GameStart extends JPanel implements Runnable {
 
+    Princesa prin = new Princesa();
+
     public GameStart(){
         Thread processoGame = new Thread(this);
         processoGame.start();
@@ -19,13 +21,14 @@ public class GameStart extends JPanel implements Runnable {
     }
 
     public void update(){
-
+    prin.update();
     }
 
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        g.setColor(Color.BLACK);
-        g.fillRect(10, 10, 100, 100);
+        g.setColor(Color.darkGray);
+        g.fillRect(0, 450, 1280, 200);
+        prin.pintar(g);
 
     }
 
