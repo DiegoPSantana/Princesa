@@ -18,6 +18,8 @@ public class Janela {
 
         janela.add(game);
 
+        janela.addKeyListener(game);
+
     }
 
 }

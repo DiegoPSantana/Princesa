@@ -6,6 +6,7 @@ import java.io.File;
 public class Princesa {
 
     int posX, posY, velocida, largura, altura;
+    int direcao, ultimarDirecao;
 
     int timer;
 
@@ -53,6 +54,20 @@ public class Princesa {
             timer = 0;
         }
 
+        if(direcao == 1){
+            posX+=velocida;
+        } else if(direcao == -1){
+            posX-=velocida;
+        }
+
     }
 
+    public void movimento(int dir) {
+        if(direcao == dir){
+            direcao = dir;
+            ultimarDirecao = dir;
+        } else {
+            direcao = dir;
+        }
+    }
 }

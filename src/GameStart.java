@@ -1,7 +1,9 @@
 import javax.swing.JPanel;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class GameStart extends JPanel implements Runnable {
+public class GameStart extends JPanel implements Runnable, KeyListener {
 
     Princesa prin = new Princesa();
 
@@ -38,6 +40,28 @@ public class GameStart extends JPanel implements Runnable {
 
         } catch (Exception e){
             System.out.println(" Error em Sleep " + e);
+        }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_D){
+            prin.movimento(1);
+        } else if(e.getKeyCode() == KeyEvent.VK_A){
+            prin.movimento(-1);
+        }
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_D || e.getKeyCode() == KeyEvent.VK_A ){
+            prin.movimento(0);
         }
     }
 }
