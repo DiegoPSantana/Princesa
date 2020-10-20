@@ -13,6 +13,10 @@ public class Princesa {
     private BufferedImage princesaIdle[];
     private int idleAtual;
 
+    // Run
+    private BufferedImage princesaRun[];
+    private int runATual;
+
     public Princesa(){
         posX = 200;
         posY = 350;
@@ -35,6 +39,22 @@ public class Princesa {
        } catch(Exception e){
            System.out.println("Imagens idle Não Carregadas");
        }
+
+       // Run
+        princesaRun = new BufferedImage[20];
+        runATual = 0;
+
+        try {
+            for(int i = 0; i < 20; i++){
+                String run = "src/Sprites/Run (" + (i + 1) + ").png";
+                princesaRun[i] = ImageIO.read(new File(run));
+                System.out.println("Imagens " + run + "Carregadas");
+            }
+
+        } catch (Exception e){
+            System.out.println(e + "Error");
+        }
+
 
     }
 
