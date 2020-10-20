@@ -59,8 +59,12 @@ public class Princesa {
     }
 
     public void pintar(Graphics g){
-        g.drawImage(princesaIdle[idleAtual], posX, posY, posX + largura, posY + altura, 0, 0, princesaIdle[idleAtual].getWidth(), princesaIdle[idleAtual].getHeight(), null
-        );
+        if(direcao == 0){
+            g.drawImage(princesaIdle[idleAtual], posX, posY, posX + largura, posY + altura, 0, 0, princesaIdle[idleAtual].getWidth(), princesaIdle[idleAtual].getHeight(), null
+            );
+        } else if(direcao == 1){
+            g.drawImage(princesaRun[runATual], posX, posY, posX + largura, posY + altura, 0, 0, princesaRun[runATual].getWidth(), princesaRun[runATual].getHeight(), null);
+        }
     }
 
     public void update(){
@@ -71,6 +75,12 @@ public class Princesa {
             if(idleAtual == 20){
                 idleAtual = 0;
             }
+            runATual++;
+            if(runATual == 20){
+                runATual = 0;
+
+            }
+            System.out.println(runATual);
             timer = 0;
         }
 
