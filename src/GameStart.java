@@ -54,6 +54,8 @@ public class GameStart extends JPanel implements Runnable, KeyListener {
             prin.movimento(1);
         } else if(e.getKeyCode() == KeyEvent.VK_A){
             prin.movimento(-1);
+        } else if(e.getKeyCode() == KeyEvent.VK_SPACE){
+            prin.iniciaPulo();
         }
 
     }
